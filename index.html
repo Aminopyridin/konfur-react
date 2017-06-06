@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
+	<title>Комфортная разработка на React</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,186 +10,215 @@
 <body class="shower list">
 
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>Комфортная разработка на React</h1>
+		<p>Самохина Вероника</p>
 	</header>
 
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
+		<h2>Комфортная разработка на React</h2>
+		<p>Самохина Вероника</p>
+
 		<style>
 			#cover h2 {
 				margin:30px 0 0;
-				color:#FFF;
 				text-align:center;
 				font-size:70px;
 				}
 			#cover p {
 				margin:10px 0 0;
 				text-align:center;
-				color:#FFF;
 				font-style:italic;
 				font-size:20px;
 				}
-				#cover p a {
-					color:#FFF;
-					}
 		</style>
 	</section>
 
 	<section class="slide">
-		<h2>Shower key features</h2>
+		<h2>О чем пойдет речь</h2>
 		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
+			<li>Flow — библиотека для статической типизации</li>
+			<li>Storybook — песочница для компонентов</li>
+			<li>Enzyme — библиотека для тестировния React-компонентов</li>
 		</ol>
 	</section>
 
 	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
+		<h2>Начнем с Flow</h2>
+		<img src="pictures/flow.png" alt="Flow">
 	</section>
 
 	<section class="slide">
-		<h2>Code samples</h2>
+		<h2>Установка Flow</h2>
+		<ul>
+			<li>Открываем сайт <a href="https://flow.org/en/docs/install/">https://flow.org/en/docs/install/</a></li>
+			<li>Выбираем пункт <code>npm</code></li>
+			<li>Выполняем все по порядку (кроме <code>npm install</code> — это уже сделано)</li>
+			<li>Расставляем флаг <code>//@flow</code>первой строкой во всех js-файлах</li>
+			<li>При запуске <code>npm run flow</code> не должно быть ошибок</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Опишем тип вопроса</h2>
 		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code>export type QuestionType = {</code>
+			<code>	text: string,</code>
+			<code>	image: ?string,</code>
+			<code>	variants: Variant[]</code>
+			<code>}</code>
+		</pre>
+
+		<p>Он есть закомментированный в файле App.js</p>
+	</section>
+
+	<section class="slide">
+		<h2>Опишите сами тип варианта ответа</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Опишите пропсы компонента QuestionList</h2>
+		<p>В файле QuestionList есть ссылка где рассказано, как это сделать.</p>
+		<p>Тут всего одно поле, так что это должно быть просто.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Мой вариант ответа</h2>
+		<pre>
+			<code>props: {</code>
+			<code>	questions: QuestionType[],</code>
+			<code>}</code>
 		</pre>
 	</section>
 
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
-
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<figure>
-			<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
+		<h2>Теперь Flow будет за нами пристально следить</h2>
 	</section>
 
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
+		<h2>Storybook</h2>
+		<img src="pictures/storybook.svg" style="width: 100%; margin: 30px auto;" alt="Storybook">
+	</section>
+
+
+	<section class="slide">
+		<h2>Установка Storybook</h2>
+		<ul>
+			<li>Открываем сайт <a href="https://storybook.js.org/basics/slow-start-guide/">https://storybook.js.org/basics/slow-start-guide/</a></li>
+			<li>Выполняем все по порядку (кроме <code>npm install</code> — это уже сделано)</li>
+			<li>Сделаем все, чтобы сторибук запустился с дефолтным примером</li>
+		</ul>
 	</section>
 
 	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
+		<h2>Подготовимся к написанию собственной story</h2>
+		<p>В конфиге сторибука надо сделать, чтобы он показывал все файлы, которые мы положим в папку stories.
+			Сделаем это как-то так:</p>
+		<pre>
+			<code>const req = require.context('../stories', true, /\.js$/);</code>
+			<code>req.keys().forEach((filename) => req(filename));</code>
+		</pre>
 	</section>
 
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
+	<section class="slide">
+		<h2>Напишем "историю" для будущего компонента Question</h2>
+		<p>Сделайте все по образу кнопок</p>
+		<p><mark>Обрати внимание</mark>: для того, чтобы компоненты material-ui могли рендериться, их нужно обернуть в
+			"тему". Оберни рендер кнопок в <code>MuiThemeProvider</code>, как это сделано в компоненте App.js</p>
 	</section>
 
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
+	<section class="slide">
+		<h2>Мой вариант ответа</h2>
+		<pre>
+			<code></code>
+			<code></code>
+			<code></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Напишем сам компонент вопроса</h2>
+		<p>Попробуй сделать это сам, тебе могут пригодиться компоненты Card и RadioButton из material-ui, ссылка на
+			них у тебя readme.md</p>
+		<p>*В процессе написания лучше будет сразу писать "истории" к вопросу и типы для flow</p>
+	</section>
+
+
+	<section class="slide">
+		<h2>Мой вариант ответа</h2>
+		<p>Находится у вас в файле <mark>secret</mark> :)</p>
+	</section>
+
+	<section class="slide">
+		<h2>Enzyme</h2>
+		<img src="pictures/enzyme.jpg" style="width: 50%; margin: 0 auto; display: block" alt="Storybook">
+	</section>
+
+
+	<section class="slide">
+		<h2>Пишем первый тест</h2>
+		<p>Посмотри на компонент Question. Какие тесты к нему можно написать?</p>
+	</section>
+
+	<section class="slide">
+		<h2>Пишем первый тест</h2>
+		<p>Создай файл для теста в папке tests</p>
+		<pre>
+			<code>import React from 'react';</code>
+			<code>import { expect } from 'chai';</code>
+			<code>import { shallow } from 'enzyme';</code>
+			<code>import sinon from 'sinon';</code>
+			<code>import Question from '../src/components/Question';</code>
+		</pre>
+	</section>
+
+
+	<section class="slide">
+		<h2>Пишем первый тест</h2>
+		<pre>
+			<code>describe('&lt;Question /&gt;', () => {</code>
+			<code>	it('должен генерировать две радио-кнопки', () => {</code>
+			<code>		const variants = [{value: 'val1', label: 'text1'},</code>
+			<code>						  {value: 'val2', label: 'text2'}]</code>
+			<code>		const wrapper = shallow(&lt;Question variants={}/&gt;);</code>
+			<code>		expect(wrapper.find('RadioButton').length).to.equal(2);</code>
+			<code>	});</code>
+			<code>});</code>
+		</pre>
+	</section>
+
+
+	<section class="slide">
+		<h2>Напиши еще пару тестов</h2>
+		<p>Напиши тесты для проверки, что картинка рисуется, если передан параметр image и не рисуется, если не
+			передан</p>
+	</section>
+
+
+	<section class="slide">
+		<h2>Напиши тест события</h2>
+		<p>Напиши тесты для проверки, при нажатии на кнопку, вызывается событие onClick. Для этого тебе понадобится
+			метод <code>spy</code> библиотеки <code>sinon</code>. Как это сделать, написано по ссылке
+			<a href="http://airbnb.io/enzyme/docs/api/shallow.html">http://airbnb.io/enzyme/docs/api/shallow.html</a>
+		</p>
+		<p>*<i>Задание со *:</i> напиши тест, который проверяет, что onChange передает правильное значение</p>
+	</section>
+
+
+	<section class="slide">
+		<h2>Мой вариант ответа</h2>
+		<p>Находится у тебя в файле <mark>secret</mark> :)</p>
+	</section>
+
+
+	<section class="slide">
+		<h2>Конец :)</h2>
+		<p>Теперь ты знаешь:</p>
+		<ul>
+			<li>Как сделать JS статически-типизированным языком</li>
+			<li>Как разработать компонент изолированно от всего приложения</li>
+			<li>Как хранить в красивом виде библиотеку компонентов</li>
+			<li>Как тестировать React-компоненты</li>
+		</ul>
 	</section>
 
 	<footer class="badge">
