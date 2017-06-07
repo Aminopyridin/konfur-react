@@ -50,20 +50,32 @@
 	<section class="slide">
 		<h2>Установка Flow</h2>
 		<ul>
-			<li>Открываем сайт <a href="https://flow.org/en/docs/install/">https://flow.org/en/docs/install/</a></li>
-			<li>Выбираем пункт <code>npm</code></li>
-			<li>Выполняем все по порядку (кроме <code>npm install</code> — это уже сделано)</li>
-			<li>Расставляем флаг <code>//@flow</code>первой строкой во всех js-файлах</li>
+			<li>Открй сайт <a href="https://flow.org/en/docs/install/">https://flow.org/en/docs/install/</a></li>
+			<li>Выбери пункт <code>npm</code></li>
+			<li>Выполни раздел Setup Flow по порядку (кроме <code>npm install</code> — это уже сделано)</li>
+			<li>Расставь флаг <code>//@flow</code>первой строкой во всех js-файлах директории src</li>
 			<li>При запуске <code>npm run flow</code> не должно быть ошибок</li>
 		</ul>
 	</section>
 
+
 	<section class="slide">
-		<h2>Опишем тип вопроса</h2>
+		<h2>Типы во Flow</h2>
+		<ol>
+			<li>Примитивы: string, number, boolean</li>
+			<li>any</li>
+			<li>string[], { value:string }</li>
+			<li>(id: string) => any;</li>
+			<li>function foo(id: string): boolean {return true}</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Опиши тип вопроса</h2>
 		<pre>
 			<code>export type QuestionType = {</code>
 			<code>	text: string,</code>
-			<code>	image: ?string,</code>
+			<code>	image?: string,</code>
 			<code>	variants: Variant[]</code>
 			<code>}</code>
 		</pre>
@@ -72,11 +84,28 @@
 	</section>
 
 	<section class="slide">
-		<h2>Опишите сами тип варианта ответа</h2>
+		<h2>Опиши тип варианта ответа</h2>
 	</section>
 
 	<section class="slide">
-		<h2>Опишите пропсы компонента QuestionList</h2>
+		<h2>Мой вариант ответа</h2>
+		<pre>
+			<code>export type Variant = {</code>
+			<code>	value: string,</code>
+			<code>	label: string,</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Использование типов</h2>
+		<p>Функция <code>getQuestions</code> возвращает вопросы, теперь определим, что она возвращает вопросы типа
+			<code>QuestionType</code></p>
+		<p>Для этого после круглых скобок в объявлении функции напишем <code>: QuestionType</code></p>
+	</section>
+
+	<section class="slide">
+		<h2>Опиши пропсы компонента QuestionList</h2>
 		<p>В файле QuestionList есть ссылка где рассказано, как это сделать.</p>
 		<p>Тут всего одно поле, так что это должно быть просто.</p>
 	</section>
@@ -91,7 +120,7 @@
 	</section>
 
 	<section class="slide">
-		<h2>Теперь Flow будет за нами пристально следить</h2>
+		<h2>Теперь Flow будет за тобой пристально следить</h2>
 	</section>
 
 	<section class="slide">
@@ -103,16 +132,17 @@
 	<section class="slide">
 		<h2>Установка Storybook</h2>
 		<ul>
-			<li>Открываем сайт <a href="https://storybook.js.org/basics/slow-start-guide/">https://storybook.js.org/basics/slow-start-guide/</a></li>
-			<li>Выполняем все по порядку (кроме <code>npm install</code> — это уже сделано)</li>
-			<li>Сделаем все, чтобы сторибук запустился с дефолтным примером</li>
+			<li>Откройсайт <a href="https://storybook.js.org/basics/slow-start-guide/">https://storybook.js
+				.org/basics/slow-start-guide/</a></li>
+			<li>Выполни все по порядку (кроме <code>npm install</code> — это уже сделано)</li>
+			<li>Сделай все, чтобы сторибук запустился с дефолтным примером</li>
 		</ul>
 	</section>
 
 	<section class="slide">
-		<h2>Подготовимся к написанию собственной story</h2>
-		<p>В конфиге сторибука надо сделать, чтобы он показывал все файлы, которые мы положим в папку stories.
-			Сделаем это как-то так:</p>
+		<h2>Подготовься к написанию собственной story</h2>
+		<p>В конфиге сторибука надо сделать, чтобы он показывал все файлы, которые ты положешь в папку stories.
+			Я делаю это как-то так:</p>
 		<pre>
 			<code>const req = require.context('../stories', true, /\.js$/);</code>
 			<code>req.keys().forEach((filename) => req(filename));</code>
@@ -120,32 +150,27 @@
 	</section>
 
 	<section class="slide">
-		<h2>Напишем "историю" для будущего компонента Question</h2>
-		<p>Сделайте все по образу кнопок</p>
-		<p><mark>Обрати внимание</mark>: для того, чтобы компоненты material-ui могли рендериться, их нужно обернуть в
-			"тему". Оберни рендер кнопок в <code>MuiThemeProvider</code>, как это сделано в компоненте App.js</p>
+		<h2>Напиши "историю" для будущего компонента Question</h2>
+		<p>Сделай все по образу кнопок</p>
 	</section>
 
 	<section class="slide">
-		<h2>Мой вариант ответа</h2>
-		<pre>
-			<code></code>
-			<code></code>
-			<code></code>
-		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Напишем сам компонент вопроса</h2>
+		<h2>Напиши сам компонент вопроса</h2>
 		<p>Попробуй сделать это сам, тебе могут пригодиться компоненты Card и RadioButton из material-ui, ссылка на
 			них у тебя readme.md</p>
-		<p>*В процессе написания лучше будет сразу писать "истории" к вопросу и типы для flow</p>
+		<p>*<i>В процессе написания лучше будет сразу писать "истории" к вопросу и типы для flow</i></p>
+		<p><mark>Обрати внимание</mark>: для того, чтобы компоненты material-ui могли рендериться, их нужно обернуть в
+			"тему". Оберни рендер компонента Question в <code>MuiThemeProvider</code>, как это сделано в компоненте App
+			.js</p>
 	</section>
 
+	<section class="slide">
+		<img src="pictures/quizpage.jpg" class="cover" alt="Вопросы выглядят так">
+	</section>
 
 	<section class="slide">
 		<h2>Мой вариант ответа</h2>
-		<p>Находится у вас в файле <mark>secret</mark> :)</p>
+		<p>Находится у тебя в файле <mark>secret</mark> :)</p>
 	</section>
 
 	<section class="slide">
@@ -179,7 +204,7 @@
 			<code>	it('должен генерировать две радио-кнопки', () => {</code>
 			<code>		const variants = [{value: 'val1', label: 'text1'},</code>
 			<code>						  {value: 'val2', label: 'text2'}]</code>
-			<code>		const wrapper = shallow(&lt;Question variants={}/&gt;);</code>
+			<code>		const wrapper = shallow(&lt;Question variants={variants}/&gt;);</code>
 			<code>		expect(wrapper.find('RadioButton').length).to.equal(2);</code>
 			<code>	});</code>
 			<code>});</code>
@@ -191,6 +216,7 @@
 		<h2>Напиши еще пару тестов</h2>
 		<p>Напиши тесты для проверки, что картинка рисуется, если передан параметр image и не рисуется, если не
 			передан</p>
+		<p>Тебе может пригодиться метод <code>exists</code>, ссылка на него в readme.md</p>
 	</section>
 
 
@@ -220,10 +246,6 @@
 			<li>Как тестировать React-компоненты</li>
 		</ul>
 	</section>
-
-	<footer class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</footer>
 
 	<div class="progress"></div>
 
