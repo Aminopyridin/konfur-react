@@ -6,6 +6,15 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+	<style>
+		.slide {
+			font-size: 35px;
+			padding-top: 60px;
+		}
+		pre {
+			font-size: 28px;
+		}
+	</style>
 </head>
 <body class="shower list">
 
@@ -61,19 +70,30 @@
 	</section>
 
 	<section class="slide">
+		<img src="pictures/quizpage.jpg" class="cover" alt="Вопросы выглядят так">
+	</section>
+
+	<section class="slide">
 		<h2>Начнем с Flow</h2>
 		<img src="pictures/flow.png" alt="Flow">
 	</section>
 
 	<section class="slide">
 		<h2>Установка Flow</h2>
-		<ul>
-			<li>Открй сайт <a href="https://flow.org/en/docs/install/">https://flow.org/en/docs/install/</a></li>
-			<li>Выбери пункт <code>npm</code></li>
-			<li>Выполни раздел Setup Flow по порядку (кроме <code>npm install</code> — это уже сделано)</li>
-			<li>Расставь флаг <code>//@flow</code>первой строкой во всех js-файлах директории src</li>
-			<li>При запуске <code>npm run flow</code> не должно быть ошибок</li>
-		</ul>
+		<ol>
+			<li>Открой сайт <a href="https://flow.org/en/docs/install/">https://flow.org/en/docs/install/</a></li>
+			<li class="next">Выбери пункт <code>npm</code></li>
+			<li class="next">Выполни раздел Setup Flow по порядку (кроме <code>npm install</code> — это уже сделано)</li>
+		</ol>
+	</section>
+
+
+	<section class="slide">
+		<h2>Установка Flow</h2>
+		<ol>
+			<li>Расставь флаг <code>//@flow</code>первой строкой во всех js-файлах в&nbsp;директории&nbsp;src</li>
+			<li class="next">При запуске <code>npm run flow</code> не должно быть ошибок</li>
+		</ol>
 	</section>
 
 
@@ -103,11 +123,7 @@
 
 	<section class="slide">
 		<h2>Опиши тип варианта ответа</h2>
-	</section>
-
-	<section class="slide">
-		<h2>Мой вариант ответа</h2>
-		<pre>
+		<pre class="next">
 			<code>export type Variant = {</code>
 			<code>	value: string,</code>
 			<code>	label: string,</code>
@@ -119,7 +135,7 @@
 		<h2>Использование типов</h2>
 		<p>Функция <code>getQuestions</code> возвращает вопросы, теперь определим, что она возвращает вопросы типа
 			<code>QuestionType</code></p>
-		<p>Для этого после круглых скобок в объявлении функции напишем <code>: QuestionType</code></p>
+		<p>Для этого после круглых скобок в объявлении функции напишем <code>:&nbsp;QuestionType[]</code></p>
 	</section>
 
 	<section class="slide">
@@ -150,7 +166,7 @@
 	<section class="slide">
 		<h2>Установка Storybook</h2>
 		<ul>
-			<li>Откройсайт <a href="https://storybook.js.org/basics/slow-start-guide/">https://storybook.js
+			<li>Открой сайт <a href="https://storybook.js.org/basics/slow-start-guide/">https://storybook.js
 				.org/basics/slow-start-guide/</a></li>
 			<li>Выполни все по порядку (кроме <code>npm install</code> — это уже сделано)</li>
 			<li>Сделай все, чтобы сторибук запустился с дефолтным примером</li>
@@ -158,28 +174,20 @@
 	</section>
 
 	<section class="slide">
-		<h2>Подготовься к написанию собственной story</h2>
-		<p>В конфиге сторибука надо сделать, чтобы он показывал все файлы, которые ты положешь в папку stories.
-			Я делаю это как-то так:</p>
-		<pre>
-			<code>const req = require.context('../stories', true, /\.js$/);</code>
-			<code>req.keys().forEach((filename) => req(filename));</code>
-		</pre>
-	</section>
-
-	<section class="slide">
 		<h2>Напиши "историю" для будущего компонента Question</h2>
 		<p>Сделай все по образу кнопок</p>
+		<p>Не забудь добавить новый файл в конфиг сторибука</p>
 	</section>
 
 	<section class="slide">
 		<h2>Напиши сам компонент вопроса</h2>
-		<p>Попробуй сделать это сам, тебе могут пригодиться компоненты Card и RadioButton из material-ui, ссылка на
-			них у тебя readme.md</p>
-		<p>*<i>В процессе написания лучше будет сразу писать "истории" к вопросу и типы для flow</i></p>
-		<p><mark>Обрати внимание</mark>: для того, чтобы компоненты material-ui могли рендериться, их нужно обернуть в
-			"тему". Оберни рендер компонента Question в <code>MuiThemeProvider</code>, как это сделано в компоненте App
-			.js</p>
+		<ul>
+			<li>Компоненты Card и RadioButton из material-ui</li>
+			<li>Поправляй историю и типы для flow</li>
+			<li><mark>Обрати внимание</mark>: компоненты material-ui нужно обернуть в
+				"тему". Оберни рендер компонента Question в <code>MuiThemeProvider</code>, как это сделано в компоненте App
+				.js</li>
+		</ul>
 	</section>
 
 	<section class="slide">
@@ -202,28 +210,17 @@
 		<p>Посмотри на компонент Question. Какие тесты к нему можно написать?</p>
 	</section>
 
-	<section class="slide">
-		<h2>Пишем первый тест</h2>
-		<p>Создай файл для теста в папке tests</p>
-		<pre>
-			<code>import React from 'react';</code>
-			<code>import { expect } from 'chai';</code>
-			<code>import { shallow } from 'enzyme';</code>
-			<code>import sinon from 'sinon';</code>
-			<code>import Question from '../src/components/Question';</code>
-		</pre>
-	</section>
-
 
 	<section class="slide">
 		<h2>Пишем первый тест</h2>
 		<pre>
 			<code>describe('&lt;Question /&gt;', () => {</code>
 			<code>	it('должен генерировать две радио-кнопки', () => {</code>
-			<code>		const variants = [{value: 'val1', label: 'text1'},</code>
-			<code>						  {value: 'val2', label: 'text2'}]</code>
-			<code>		const wrapper = shallow(&lt;Question variants={variants}/&gt;);</code>
-			<code>		expect(wrapper.find('RadioButton').length).to.equal(2);</code>
+			<code>		const variants = [...]</code>
+			<code>		const wrapper = shallow(&lt;Question
+							variants={variants}/&gt;);</code>
+			<code>		expect(wrapper.find('RadioButton').length)
+				.to.equal(2);</code>
 			<code>	});</code>
 			<code>});</code>
 		</pre>
@@ -240,11 +237,10 @@
 
 	<section class="slide">
 		<h2>Напиши тест события</h2>
-		<p>Напиши тесты для проверки, при нажатии на кнопку, вызывается событие onClick. Для этого тебе понадобится
+		<p>Напиши тесты для проверки, что при нажатии на кнопку, вызывается событие onClick. Для этого тебе понадобится
 			метод <code>spy</code> библиотеки <code>sinon</code>. Как это сделать, написано по ссылке
 			<a href="http://airbnb.io/enzyme/docs/api/shallow.html">http://airbnb.io/enzyme/docs/api/shallow.html</a>
 		</p>
-		<p>*<i>Задание со *:</i> напиши тест, который проверяет, что onChange передает правильное значение</p>
 	</section>
 
 
